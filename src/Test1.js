@@ -42,16 +42,7 @@ app.get(
     },
 );
 
-app.post(
-    '/digestItems',
-    passport.authenticate('bearer', { session: false }),
-    (req, res) => {
-        DigestItems.create({ note: req.body.note })
-            .then((digestItem) => {
-                res.send(digestItem);
-            });
-    },
-);
+
 app.delete(
     '/digestItems/:id',
     passport.authenticate('bearer', { session: false }),
