@@ -42,6 +42,8 @@ app.get(
     },
 );
 
+// Added line 1 in devgs1
+
 app.post(
     '/digestItems',
     passport.authenticate('bearer', { session: false }),
