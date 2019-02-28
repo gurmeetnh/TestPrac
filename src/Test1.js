@@ -77,6 +77,8 @@ app.put (
     },
 );
 
+// An extra log line
+
 app.delete(
     '/digestItems/:id',
     passport.authenticate('bearer', { session: false }),
