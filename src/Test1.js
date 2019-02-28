@@ -65,6 +65,18 @@ app.put (
     },
 );
 
+// Alternative put method
+app.put (
+    '/digestItems/:id',
+    passport.authenticate('bearer', { session: false }),
+
+    (req, res) => {
+        DigestItems.findById(req.params.id)
+            .then(/*digestItem => digestItem.destroy()*/)
+            .then(/*() => res.send()*/);
+    },
+);
+
 app.delete(
     '/digestItems/:id',
     passport.authenticate('bearer', { session: false }),
